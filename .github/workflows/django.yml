@@ -1,0 +1,30 @@
+姓名:Django CI
+
+在……之上:
+推:
+分支机构:[ "主" ]
+pull_request:
+分支机构:[ "主" ]
+
+工作:
+建立:
+
+run-on:ubuntu-最新
+策略:
+最大平行:4
+矩阵:
+Python版:[3.7,3.8,3.9]
+
+步骤:
+-uses:操作/结帐@v4
+-姓名:设置Python${{matrix.python版本}}
+uses:操作/setup-python@v3
+和……一起:
+Python版:${{matrix.python版本}}
+-姓名:安装相依性
+跑:|
+Python-m pip安装--upgrade pip
+PIP安装-r要求.txt
+-姓名:运行测试
+跑:|
+Python manage.py测试
